@@ -15,7 +15,7 @@ idea {
 }
 
 allprojects {
-    group "ru.otus"
+    group "com.nasyrov"
 
     repositories {
         mavenLocal()
