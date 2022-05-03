@@ -15,7 +15,7 @@ idea {
 }
 
 allprojects {
-    group "com.nasyrov"
+    group "ru.otus"
 
     repositories {
         mavenLocal()
@@ -25,7 +25,20 @@ allprojects {
     apply plugin: "io.spring.dependency-management"
     dependencyManagement {
         dependencies {
+            imports {
+                mavenBom("org.springframework.boot:spring-boot-dependencies:2.6.4")
+            }
             dependency("com.google.guava:guava:${Versions.guava}")
+            dependency("org.openjdk.jmh:jmh-core:${Versions.jmh}")
+            dependency("org.openjdk.jmh:jmh-generator-annprocess:${Versions.jmh}")
+            dependency("org.openjdk.jol:jol-core:${Versions.jol}")
+            dependency("org.ow2.asm:asm-commons:${Versions.asm}")
+            dependency("org.glassfish:javax.json:${Versions.glassfishJson}")
+            dependency("com.google.protobuf:protobuf-java-util:${Versions.protobuf}")
+
+            dependency("org.testcontainers:junit-jupiter:${Versions.testcontainers}")
+            dependency("org.testcontainers:postgresql:${Versions.testcontainers}")
         }
     }
+
 }
