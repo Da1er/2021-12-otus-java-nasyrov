@@ -47,14 +47,13 @@ public class TestRunnerImpl implements TestRunner {
           }
           statisticsRegistrator.registerSuccess();
         } catch (Exception ex) {
-         statisticsRegistrator.registerFailure();
+          statisticsRegistrator.registerFailure();
         }
     }
 
     private List<Method> getAnnotatedMethods(Method[] allMethods, Class<? extends Annotation> annotation)
     {
         return Arrays.stream(allMethods)
-                .parallel()
                 .filter(method -> method.isAnnotationPresent(annotation))
                 .toList();
     }
